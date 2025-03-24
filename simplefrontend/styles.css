@@ -1,0 +1,258 @@
+/* Reset und grundlegende Stile */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2e6ce; /* Hintergrund des Hauptbereichs */
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #ffffff; /* Hintergrund: weiß */
+  padding: 15px 0;
+}
+
+.header-container {
+  width: 100%;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.header-container h1,
+.header-container h2,
+.header-container .header-title {
+  color: #0b54a6;         /* Blau wie auf der Seite */
+  margin-left: 20px;     /* Etwas Abstand zum Logo */
+  /* Falls gewünscht: Schriftgröße, Dicke usw. anpassen */
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+
+
+.logo img {
+  max-height: 60px;
+}
+
+/* Trennlinie */
+hr {
+  border: none;
+  border-top: 2px solid #ccc;
+  margin: 0;
+}
+
+/* Hauptbereich */
+.main-container {
+  display: flex;
+  min-height: calc(
+    100vh - 70px
+  ); /* Höhe des Headers und der Trennlinie abziehen */
+  background-color: #f2e6ce; /* Hintergrund des Hauptbereichs */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 10%; /* Spalte von 10% */
+  background-color: #f2e6ce; /* Hintergrund der Sidebar */
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar ul {
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar ul li {
+  width: 100%;
+  text-align: left;
+  margin: 20px 20px 0;
+}
+
+.sidebar ul li a {
+  color: #0b54a6;
+  text-decoration: none;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #b47d00;
+  color: white;
+}
+
+.sidebar ul li a i {
+  margin-right: 5px;
+  font-size: 1.2em;
+}
+
+/* Content */
+.content {
+  width: 90%; /* Rest auf Vollgröße */
+  padding: 20px;
+  background-color: #ffffff; /* Hintergrund des Inhaltsbereichs */
+}
+
+/* Abschnittstitel */
+.content h2 {
+  margin-bottom: 20px;
+  color: #e8491d;
+  display: flex;
+  align-items: center;
+}
+
+.content h2 i {
+  margin-right: 10px;
+}
+
+/* Formularstile */
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #0b54a6;
+}
+
+.form-group select,
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="tel"],
+.form-group input[type="number"] {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 90%;
+}
+
+/* Button-Styling */
+button {
+  background-color: #fff; /* Weißer Hintergrund */
+  border: 2px solid #0b54a6; /* Blaue Umrandung */
+  color: #0b54a6; /* Blaue Schrift */
+  border-radius: 999px; /* Für „runde“ Kanten (Pill-Shape) */
+  padding: 0.5rem 1.5rem;
+  margin: 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover- oder Fokus-Effekt beim Button */
+button:hover,
+button:focus {
+  background-color: #0b54a6;
+  color: #fff;
+}
+
+/* Container für die Tabelle */
+.table-container {
+  width: 100%;
+  max-width: 600px;
+
+  /* „Karten“-Look: Rahmen, abgerundete Ecken, Schatten */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  /* Sorgt dafür, dass die Tabelle in den abgerundeten Container passt */
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Doppelte Rahmen entfernen */
+  border: none; /* Nicht mehr direkt an der Tabelle */
+  margin: 0; /* Falls abweichende Browser-Defaults */
+}
+
+table tr {
+  border-bottom: 1px solid #ccc; /* horizontale Linie zwischen Zeilen */
+}
+
+table th {
+  color: #0b54a6; /* Blaue Schrift für den Header */
+}
+
+table th,
+table td {
+  text-align: center;
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+}
+
+/* Optionaler Hover-Effekt */
+table tr:hover td {
+  background-color: #f9f9f9;
+}
+
+section {
+  margin: 0 0 80px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+
+  .content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+}

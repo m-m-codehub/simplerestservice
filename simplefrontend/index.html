@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SimpleRestService</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="images/fox.jpg" alt="Logo" />
+        </div>
+        <h1 class="header-title">SimpleRestService</h1>
+      </div>
+    </header>
+
+    <hr />
+
+    <div class="main-container">
+      <nav class="sidebar">
+        <ul>
+          <li>
+            <a href="#GetDummydaten">
+              <i class="fas fa-database"></i>
+              Get Dummydaten
+            </a>
+          </li>
+          <li>
+            <a href="#PostDummydaten">
+              <i class="fas fa-upload"></i>
+              Post Dummydaten
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="content">
+        <section id="GetDummydaten">
+          <h2><i class="fas fa-database"></i> Get Dummydaten</h2>
+          <button id="getData">GET</button>
+          <div class="table-container">
+            <table id="dummyTable">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Alter</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Dynamische Zeilen -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="PostDummydaten">
+          <h2><i class="fas fa-upload"></i> Post Dummydaten</h2>
+          
+          <form id="dummyForm">
+            <button type="submit" id="postData">POST</button>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dummyName">Name</label>
+                <input type="text" id="dummyName" name="dummyName" required />
+              </div>
+              <div class="form-group">
+                <label for="dummyAge">Alter</label>
+                <input type="number" id="dummyAge" name="dummyAge" required />
+              </div>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="dummyservice.js"></script>
+  </body>
+</html>
