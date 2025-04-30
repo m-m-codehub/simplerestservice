@@ -1,6 +1,6 @@
-# Quasar App (rest_demo)
+# SimpleRestService (simple-rest-service)
 
-A Quasar Project
+Simple Rest Service
 
 ## Install the dependencies
 ```bash
