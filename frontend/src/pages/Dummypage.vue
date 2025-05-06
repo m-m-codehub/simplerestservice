@@ -17,11 +17,6 @@ import PostDummy from "components/PostDummy.vue";
 </script>
 
 <style scoped>
-h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 0.5em;
-}
 
 .dummy-wrapper {
     display: flex;
