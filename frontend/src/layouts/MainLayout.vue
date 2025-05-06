@@ -2,31 +2,23 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-img
-          src="~assets/fox.jpg"
-          style="height: 47px; max-width: 50px"
-          clickable
-          @click="toggleLeftDrawer"
-        ></q-img>
-        <q-toolbar-title> Simple Rest Service </q-toolbar-title>
+        <q-btn flat dense round icon="menu" @click="toggleLeftDrawer" />
+        <q-toolbar-title>Simple Rest Service</q-toolbar-title>
         <q-space />
       </q-toolbar>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label header>
-          <div v-for="link in linksList" :key="link.title" v-bind="link">
-            <q-item clickable :to="link.link" @click="toggleLeftDrawer()">
-              <q-item-section v-if="link.icon" avatar>
-                <q-icon :name="link.icon" />
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>{{ link.title }}</q-item-label>
-              </q-item-section>
-            </q-item>
-          </div>
-        </q-item-label>
+        <q-item-label header>Navigation</q-item-label>
+        <q-item clickable to="/" @click="toggleLeftDrawer">
+          <q-item-section avatar><q-icon name="home" /></q-item-section>
+          <q-item-section>Startseite</q-item-section>
+        </q-item>
+        <q-item clickable to="/dummy" @click="toggleLeftDrawer">
+          <q-item-section avatar><q-icon name="fact_check" /></q-item-section>
+          <q-item-section>Dummy-Page</q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -37,23 +29,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-
-const leftDrawerOpen = ref(false);
-
-const linksList = [
-  {
-    title: "Get Request",
-    icon: "home",
-    link: "/",
-  },
-  {
-    title: "Post Request",
-    icon: "shop",
-    link: "post",
-  },
-];
+import { ref } from 'vue'
+const leftDrawerOpen = ref(false)
 const toggleLeftDrawer = () => {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
-};
+  leftDrawerOpen.value = !leftDrawerOpen.value
+}
 </script>

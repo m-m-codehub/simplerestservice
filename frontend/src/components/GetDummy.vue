@@ -3,13 +3,8 @@
     <q-btn outline rounded color="primary" label="Get" @click="get" />
   </div>
   <div class="wrapper">
-    <q-list class="list" bordered separator>
-      <DummyItem
-        v-for="item in list"
-        :key="item.name + item.age"
-        :name="item.name"
-        :age="item.age"
-      />
+    <q-list class="list" bordered separator v-if="list && list.length">
+      <DummyItem v-for="item in list" :key="item.name + item.age" :name="item.name" :age="item.age" />
     </q-list>
   </div>
 </template>
@@ -35,6 +30,7 @@ const get = () => {
 .list {
   width: 50vw;
 }
+
 .wrapper {
   height: 50vh;
   display: flex;
