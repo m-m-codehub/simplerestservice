@@ -1,6 +1,7 @@
 package de.vkb.RestService.api;
 
 import de.vkb.RestService.domainmodel.entities.Dummy;
+import de.vkb.RestService.repository.DummyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,19 +13,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DummyService {
 
-    private List<Dummy> dummies = new ArrayList<>(List.of(
-            new Dummy("Dummy 1", 21),
-            new Dummy("Dummy 2", 23),
-            new Dummy("Dummy 3", 25),
-            new Dummy("Dummy 4", 27)
-    ));
+    private final DummyRepository dummyRepository;
 
     public List<Dummy> getAll(){
-        return dummies;
+        return dummyRepository.findAll();
     }
 
     public String createDummy(Dummy dummy) {
-        dummies.add(dummy);
+        dummyRepository.save(dummy);
         // Gib das Dummy-Objekt als String in der Konsole aus
         System.out.println("Empfangenes Dummy-Objekt: " + dummy.toString());
         return "Dummy '" + dummy.getName() + "' wurde erfolgreich gesendet!";
