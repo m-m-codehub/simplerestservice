@@ -1,4 +1,4 @@
-# Simple Rest Server
+# Simple Rest Service
 
 - Backend: Springboot
 - Simplefrontend: plain HTML, CSS, JS
