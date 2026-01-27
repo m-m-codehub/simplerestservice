@@ -75,11 +75,8 @@
 							<outputDirectory>${project.build.outputDirectory}/static</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${project.parent.basedir}/frontend/dist</directory>
-									<includes>
-										<include>static/</include>
-										<include>index.html</include>
-									</includes>
+									<directory>${project.parent.basedir}/frontend/dist/spa</directory>
+                                    <filtering>false</filtering>
 								</resource>
 							</resources>
 						</configuration>
