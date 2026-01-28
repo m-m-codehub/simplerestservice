@@ -74,7 +74,7 @@
 							<outputDirectory>${project.build.outputDirectory}/static</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${project.parent.basedir}/simple-frontend/</directory>
+									<directory>${project.parent.basedir}/simplefrontend/</directory>
 									<filtering>false</filtering>
 								</resource>
 							</resources>
